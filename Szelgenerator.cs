@@ -4,7 +4,20 @@ using System.Text;
 
 namespace EromuApp
 {
-    public class Szelgenerator
+    public class Szelgenerator : Eromu
     {
+        public int Toronymagassag { get; set; }
+        public Szelgenerator(int toronymagassag, string azonosito, int kapacitas, int osszeromuszam) : base(azonosito, kapacitas, osszeromuszam)
+        {
+            Toronymagassag = toronymagassag;
+        }
+        public override int NapiTermeles(int orakSzama)
+        {
+            return base.NapiTermeles(orakSzama) + Toronymagassag * 10 * orakSzama;
+        }
+        public override string ToString()
+        {
+            return $"{base.ToString()} | Toronymagasság: {Toronymagassag} m";
+        }
     }
 }
