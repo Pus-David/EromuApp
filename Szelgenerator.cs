@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EromuApp
 {
-    internal class Szelgenerator
+    public class Szelgenerator
     {
     }
 }
